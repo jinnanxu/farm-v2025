@@ -1,0 +1,95 @@
+{
+  "pages": [
+    "pages/market/market-info",
+    "pages/index/index",
+    "pages/copper/cropper",
+    "pages/user/profile",
+    "pages/user/login/login",
+    "pages/user/active",
+    "pages/task/publish/log-publish",
+    "pages/fields/update/publish",
+    "pages/fields/list",
+    "pages/user/info",
+    "pages/schedule/sch-list",
+    "pages/schedule/add-sch",
+    "pages/storage/material/mlist",
+    "pages/storage/material/add-material",
+    "pages/storage/storage-mgr",
+    "pages/storage/storage-add",
+    "pages/fields/plant/plant-mgr",
+    "pages/question/question-list",
+    "pages/question/publish-question",
+    "pages/market/publish-info",
+    "pages/market/info-detail",
+    "pages/question/question-detail",
+    "pages/user/mylist/myquestions",
+    "pages/user/mylist/mymarkets",
+    "pages/user/mylist/employee",
+    "pages/market/order-confirm",
+    "pages/user/mylist/myorders",
+    "pages/market/order-detail",
+    "pages/task/task-detail",
+    "pages/info/info-list",
+    "pages/info/info-detail"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#000",
+    "navigationBarTitleText": "智能农业管理平台",
+    "navigationBarTextStyle": "white",
+    "enablePullDownRefresh": true
+  },
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "color": "#666",
+    "selectedColor": "#41A8A8",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "农事作业",
+        "iconPath": "/images/work.png",
+        "selectedIconPath": "/images/work-active.png"
+      },
+      {
+        "pagePath": "pages/market/market-info",
+        "text": "供需市场",
+        "iconPath": "/images/market.png",
+        "selectedIconPath": "/images/market-active.png"
+      },
+      {
+        "pagePath": "pages/question/question-list",
+        "text": "技术问答",
+        "iconPath": "/images/question.png",
+        "selectedIconPath": "/images/question-active.png"
+      },
+      {
+        "pagePath": "pages/info/info-list",
+        "text": "三农资讯",
+        "iconPath": "/images/news.png",
+        "selectedIconPath": "/images/news-active.png"
+      },
+      {
+        "pagePath": "pages/user/profile",
+        "text": "个人中心",
+        "iconPath": "/images/user.png",
+        "selectedIconPath": "/images/user-active.png"
+      }
+    ]
+  },
+  "usingComponents": {
+    "van-icon": "@vant/weapp/icon/index",
+    "van-button": "@vant/weapp/button/index",
+    "van-tag": "@vant/weapp/tag/index"
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "请确认授权"
+    }
+  },
+  "requiredPrivateInfos": [ 
+    "getLocation",
+    "onLocationChange",
+    "startLocationUpdateBackground",
+    "chooseAddress"
+  ]
+}

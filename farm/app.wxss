@@ -1,0 +1,107 @@
+/**app.wxss**/
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+} 
+.fixed-button{
+  display: inline-block;
+  height: 30px;
+  line-height: 30px;
+  border-radius: 15px;
+  color: #fff;
+  background-color:#fd9845;
+  font-size: 16px;
+  position: fixed;
+  bottom: 30px;
+  left: 0;
+  right: 0;
+  width: 120px;
+  margin: auto;
+  text-align: center;
+}
+.txt-center{
+  text-align: center;
+}
+.h3{
+  font-size: 18px;
+  margin: 12px 0;
+}
+.bold{
+  font-weight: bold;
+}
+.auth-pop{
+  padding: 10px 4%;
+  position: relative;
+}
+.auth-pop .auth-head{
+  padding: 5px 0;
+  font-size: 14px;
+}
+.auth-pop .auth-bold{
+  font-size: 16px;
+  padding: 10px 0;
+}
+.auth-pop .auth-btns{
+  text-align: center;
+  margin-top: 10%;
+}
+.auth-btns van-button{
+  margin: 0 5%;
+}
+.auth-btn{
+  padding: 0 30px !important;
+  font-weight: bold;
+  width: 100px !important;
+}
+.add-button{
+  width: 60px;
+  height: 60px;
+  border-radius: 30px;
+  position: fixed;
+  right: 4%;
+  bottom: 50px;
+  background-color: #41A8A8;
+  color: #fff;
+  font-size: smaller;
+  text-align: center;
+  box-shadow: 2px 2px 5px #ccc;
+}
+.add-button .add-icon{
+  font-size: 28px;
+  margin-bottom: -5px;
+}
+.no-more{
+  color: #aaa;
+  font-size: small;
+  text-align: center;
+  padding: 5px 0;
+}
+.myrecord{
+  border-bottom: #c2c2c2;
+}
+.add-button image{
+  width: 30px;
+  height: 30px;
+  padding-top: 8px;
+  margin-bottom: -6px;
+}
+.delete .van-icon{
+  color: #d77f57;
+  font-size: 22px;
+}
+.fb-btn{
+  display: inline-block;
+  height: 30px;
+  line-height: 30px;
+  background: #d77f57;
+  color: #fff;
+  width: 120px;
+  text-align: center;
+  border-radius: 22px;
+  padding: 3px 8px;
+}

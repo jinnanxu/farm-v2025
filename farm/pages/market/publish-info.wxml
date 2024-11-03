@@ -1,0 +1,44 @@
+<view  class="user-file">
+  <view class="val-input">
+    <view class="label">供需类别</view>
+    <picker bindchange="bindInfoTypeChange" range="{{infoTypes}}">
+      <view class="category-txt">{{infoTypes[selectedTypeIndex]}}</view>
+    </picker>
+  </view>
+  <view class="val-input">
+    <view class="label">信息标题</view>
+    <input bindinput="bindTitleInput" type="text" value="{{market.name}}" placeholder="请输入标题"></input>
+  </view>
+  <view class="val-input">
+    <view class="label">价格</view>
+    <input bindinput="bindPriceInput" type="text" value="{{market.price}}" placeholder="请输入出售或采购价格"></input>
+  </view>
+  <view class="val-input">
+    <view class="label">联系方式</view>
+    <input bindinput="bindMobileInput" type="text" value="{{market.mobile}}" placeholder="请输入手机号"></input>
+  </view>
+  <view class="val-input" wx:if="{{selectedTypeIndex==0}}">
+    <view class="label">农场地址</view>
+    <input bindinput="bindAddressInput" type="text" value="{{market.name}}" placeholder="请输入农场地址"></input>
+  </view>
+  <view class="val-input">
+    <view class="label">详细内容</view>
+    <textarea bindinput="bintDetailInput" placeholder="请输入供需信息详情内容"/>
+  </view>
+  <view class="">
+    <view class="label">附图(可选)</view>
+    <view class="img-list">
+      <view wx:if="{{petImg.length!=0}}" class="upload-img" wx:for="{{uploadImgs}}" wx:key="id">
+        <image mode="aspectFit" class="pic" src="{{item}}"></image>
+        <image class="del-btn" src="/images/delete.png" data-idx="{{index}}" bindtap="deletePic"></image>
+      </view>
+      <view class="upload-img" bindtap="chooseImg" wx:if="{{uploadImgs.length<9}}">
+        <image src="/images/camera.png" mode="aspectFit" class="camera-icon"></image>
+      </view>
+    </view>
+  </view>
+  <view class="bottom-btn">
+    <view class="orange-btn fb-btn" bindtap="publishLog" style="margin:0;">发布</view>
+  </view>
+  <view class="opt-btns" style="height:15px;"></view>
+</view>

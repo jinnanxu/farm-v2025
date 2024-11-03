@@ -1,0 +1,86 @@
+<wxs src="../../utils/date.wxs" module="filter" />
+<view>
+  <!--天气预报-->
+  <view class="location">
+    <van-icon name="location-o" />{{currentLocation}}
+  </view>
+  <view class="dashboard">
+    <view class="d-item" bindtap="toSchPage">
+      <view class="img">
+        <image src="/images/{{indexData.weather.daily.weathercode[0]}}.png"></image>
+      </view>
+      <view class="num">
+        <text class="big">{{filter.nFormat(indexData.weather.daily.temperature_2m_min[0],0)}}~{{filter.nFormat(indexData.weather.daily.temperature_2m_max[0],0)}}</text>
+        <text class="sub">°C</text>
+      </view>
+      <view class="desc"><text style="color: #41a8a8;">今 </text>{{filter.weahterDate(indexData.weather.daily.time[0])}}</view>
+    </view>
+    <view class="d-item" bindtap="toSchPage">
+      <view class="img">
+        <image src="/images/{{indexData.weather.daily.weathercode[1]}}.png"></image>
+      </view>
+      <view class="num">
+        <text class="big">{{filter.nFormat(indexData.weather.daily.temperature_2m_min[1],0)}}~{{filter.nFormat(indexData.weather.daily.temperature_2m_max[1],0)}}</text>
+        <text class="sub">°C</text>
+      </view>
+      <view class="desc">{{filter.weahterDate(indexData.weather.daily.time[1])}}</view>
+    </view>
+    <view class="d-item" bindtap="toSchPage">
+      <view class="img">
+        <image src="/images/{{indexData.weather.daily.weathercode[2]}}.png"></image>
+      </view>
+      <view class="num">
+        <text class="big">{{filter.nFormat(indexData.weather.daily.temperature_2m_min[2],0)}}~{{filter.nFormat(indexData.weather.daily.temperature_2m_max[2],0)}}</text>
+        <text class="sub">°C</text>
+      </view>
+      <view class="desc">{{filter.weahterDate(indexData.weather.daily.time[2])}}</view>
+    </view>
+    <!-- <view class="d-item" bindtap="toSchPage">
+      <view class="img">
+        <image src="/images/schedule.png"></image>
+      </view>
+      <view class="num">
+        <text class="big" style="color:#86c7cc;">{{indexData.schCount}}</text>
+        <text class="sub">项</text>
+      </view>
+      <view class="desc">今日待办</view>
+    </view> -->
+  </view>
+</view>
+<view class="note-list">
+  <view class="item" wx:for="{{taskList.records}}" wx:key="taskId" bindtap="toDetailPage" data-tid='{{item.taskId}}'>
+    <view class="pet-title">
+      <text>{{item.field}}：{{item.taskType}}</text>
+      <view class="desc">{{filter.format(item.startTime, 'task-time')}}</view>
+    </view>
+    <view class="tags">
+      <van-tag round color="#D77F57" size="medium">{{item.crop}}</van-tag>
+      <van-tag round color="#41A8A8" size="medium">{{item.period}}</van-tag>
+      <view class="advice" wx:if="{{item.advice!=null}}">
+        <!-- 专家建议提示 -->
+        <van-icon name="info-o" /> 
+        <text>专家建议</text>
+      </view>
+    </view>
+    <view class="remark" wx:if="{{item.taskDetail!=null}}">{{item.taskDetail}}</view>
+    <view class="img-box">
+      <image class="pet-img" mode="aspectFill" wx:for="{{item.picList}}" wx:for-item="imgItem" wx:for-index="imgIdx" src="{{imgItem}}" wx:key="id" catchtap="showLargeImage" data-idx="{{imgIdx}}" data-logidx="{{index}}"></image>
+    </view>
+  </view>
+  <view class="no-more" wx:if="{{noMore}}">——已全部加载——</view>
+</view>
+<view class="no-more" wx:if="{{userInfo.role!=1}}" style="margin-top: 30px;">——当前用户无法使用该功能——</view>
+<block wx:if="{{userInfo.role==1}}">
+  <view class="sch-button" bindtap="toSchPage" data-category="field">
+    <view>
+      <van-icon name="underway-o" />
+    </view>
+    <view>计划</view>
+  </view> 
+  <view class="add-button" bindtap="toAddPage" data-category="field">
+    <view>
+      <image src="/images/edit.png"></image>
+    </view>
+    <view>记录</view>
+  </view> 
+</block>

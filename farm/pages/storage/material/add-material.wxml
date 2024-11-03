@@ -1,0 +1,30 @@
+<view  class="user-file">
+  <view class="val-input">
+    <view class="label">物资类型</view>
+    <picker bindchange="bindCategoryChange" range="{{category}}">
+      <view class="category-txt">{{category[categoryIndx]}}</view>
+    </picker>
+  </view>
+  <view class="val-input">
+    <view class="label">物资名称</view>
+    <input bindinput="bindNameInput" type="text" value="{{material.name}}" placeholder="请输入名称"></input>
+  </view>
+  <view class="val-input">
+    <view class="label">计量单位</view>
+    <input bindinput="bindUnitInput" type="text" value="{{material.unit}}" placeholder="如：千克、件、箱"></input>
+  </view>
+  <view class="val-input">
+    <view class="label">备注信息</view>
+    <textarea bindinput="bindFieldRemarkInput" value="{{material.remark}}" placeholder="请输入备注信息"/>
+  </view>
+  <!-- <view class="val-input">
+    <view class="label">图片</view>
+    <image wx:if="{{pics.length!=0}}" mode="aspectFit" class="coach-img" src="{{item}}" wx:for="{{pics}}" wx:key="id"></image>
+    <view class="bottom-btn">
+      <view class="green-btn mt0 fb-btn" bindtap="chooseImg">选择图片</view>
+    </view>
+  </view> -->
+  <view class="bottom-btn">
+    <view class="orange-btn fb-btn" bindtap="publishMaterial">提交</view>
+  </view>
+</view>

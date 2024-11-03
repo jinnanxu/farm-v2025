@@ -1,0 +1,16 @@
+<van-popup
+  show="{{ showAuth }}"
+  position="bottom"
+  custom-style="height: 35%;"
+  closeable
+  bind:close="onCloseAuth"
+>
+  <view class="auth-pop">
+    <view class="auth-head">掌上农场小程序申请</view>
+    <view class="auth-bold">获取您的微信身份信息，是否授权一键登录？</view>
+    <view class="auth-btns">
+      <van-button type="primary" size="normal" custom-class="auth-btn" bindtap="userLogin">允 许</van-button>
+      <van-button type="warning" size="normal" custom-class="auth-btn" bindtap="onCloseAuth">拒 绝</van-button>
+    </view>
+  </view>
+</van-popup>

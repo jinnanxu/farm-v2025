@@ -1,0 +1,53 @@
+<view  class="user-file">
+  <view class="val-input">
+    <view class="label">供需内容</view>
+    <input value="{{marketInfo.title}}" disabled="disabled"></input>
+  </view>
+  <view class="val-input">
+    <view class="label">供需类别</view>
+    <van-tag round color="#D77F57" size="large" wx:if="{{marketInfo.infoType==1}}">出售</van-tag>
+    <van-tag round color="#41A8A8" size="large" wx:if="{{marketInfo.infoType==2}}">求购</van-tag>
+  </view>
+  <view class="val-input">
+    <view class="label">
+      <text wx:if="{{marketInfo.infoType==1}}">卖家期望价格</text>
+      <text wx:if="{{marketInfo.infoType==2}}">买家期望价格</text>
+    </view>
+    <input disabled="disabled" type="text" value="{{marketInfo.price}}"></input>
+  </view>
+  <view class="val-input">
+    <view class="label">
+      <text wx:if="{{marketInfo.infoType==1}}">卖家联系方式</text>
+      <text wx:if="{{marketInfo.infoType==2}}">买家联系方式</text>
+    </view>
+    <input disabled="disabled" type="text" value="{{marketInfo.mobile}}"></input>
+  </view>
+  <view class="val-input" wx:if="{{selectedTypeIndex==0}}">
+    <view class="label">农场地址</view>
+    <input bindinput="bindAddressInput" type="text" value="{{marketInfo.name}}" placeholder="请输入农场地址"></input>
+  </view>
+  <view class="val-input">
+    <view class="label">
+      <text wx:if="{{marketInfo.infoType==1}}">购买数量</text>
+      <text wx:if="{{marketInfo.infoType==2}}">出售数量</text>
+    </view>
+    <input type="text" class="input2" bindinput="bindQuntityInput" placeholder="请输入农产品数量"></input>
+  </view>
+  <view class="val-input">
+    <view class="label">期望交货时间</view>
+    <picker mode="date" start="{{today}}" bindchange="bindDateChange" style="display: inline-block;">
+      <view class="datetime-txt">{{today}}</view>
+    </picker>
+  </view>
+  <view class="val-input">
+    <view class="label">我的出价</view>
+    <input type="text" class="input2" bindinput="bindPriceInput" placeholder="请输入您的期望价格"></input>
+  </view>
+  <view class="val-input">
+    <view class="label tip">提交意向订单后，对方可以进行还价，或接受您的议价而达成意向订单，请在个人中心“我的意向单”页面中查看最新状态。</view>
+  </view>
+  <view class="bottom-btn">
+    <view class="orange-btn fb-btn" bindtap="publishLog" style="margin:0;">提交</view>
+  </view>
+  <view class="opt-btns" style="height:15px;"></view>
+</view>

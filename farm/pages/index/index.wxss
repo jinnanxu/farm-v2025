@@ -1,0 +1,191 @@
+/* pages/pet/list.wxss */
+.location{
+  padding: 5px 0;
+  text-align: center;
+  color: #666;
+}
+.menu-list{
+  display: flex;
+  justify-content: center;
+}
+.menu-list .menu{
+  width: 25%;
+  text-align: center;
+  color: #F90;
+}
+.menu-list .menu .txt{
+  font-size: 12px;
+}
+.menu-list .menu-icon{
+  width: 32px;
+  height: 32px;
+}
+.note-list{
+  line-height: 28px;
+  padding: 0 3%;
+  color: #666;
+  box-sizing: border-box;
+}
+.note-list .desc{
+  float: right;
+  color: #666;
+}
+.item .remark{
+  margin-bottom: 4px;
+  font-size: 14px;
+  color: #888;
+  margin-bottom: 4px;
+  font-size: 14px;
+  line-height: 24px;
+  color: #888;
+  word-break: break-all;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+.img-box{
+  box-sizing: border-box;
+  vertical-align: top;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+.note-list .meta-data{
+  display: inline-block;
+  width: 54%;
+  padding-left: 4px;
+  box-sizing: border-box;
+}
+.note-list .pet-img{
+  width: 31%;
+  height: 100px;
+  margin-bottom: 10px;
+  margin: 0 1%;
+}
+.note-list .pet-title{
+  font-size: 16px;
+  color: #333;
+}
+.note-list .item{
+  border-bottom: 1px solid #e2e2e2;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.note-list .item .desc{
+  font-size: 14px;
+}
+.orange-txt{
+  color: rgb(255, 183, 74);
+}
+.note-list .desc-p{
+  color: #999;
+  font-size: 14px;
+  line-height: 22px;
+}
+.note-list .desc-p .content{
+  color: #666;
+}
+.note-list .desc-p2{
+  color: #666;
+  font-size: 14px;
+}
+.desc-p .icon, .desc-p2 .icon{
+  width: 22px;
+  height: 22px;
+  padding-right: 4px;
+  vertical-align:middle;
+}
+.ccc-txt{color:#ccc;}
+.category{
+  padding: 10px 0;
+  box-shadow: 0px 1px 8px rgba(0,0,0,.2);
+}
+.category .item{
+  display: inline-block;
+  width: 25%;
+  text-align: center;
+  padding: 20px 0;
+  color: #666;
+}
+.category .item image{
+  width: 50px;
+  height: 50px;
+}
+.category .item .txt{
+  padding-top: 10px;
+  font-size-adjust: 18px;
+}
+.note-list .tags van-tag{
+  margin-right: 8px;
+}
+.tags .file-cnt{
+  float: right;
+  font-size: 14px;
+}
+.tags{
+  clear: both;
+}
+.tags .advice{
+  float: right;
+  font-size: 14px;
+  color: #666;
+}
+.dashboard{
+  padding-bottom: 15px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  box-shadow: 0px 4px 8px #ddd;
+}
+.dashboard .d-item{
+  width: 31%;
+  box-sizing: border-box;
+}
+.d-item .img{
+  text-align: center;
+  margin: 2px 0;
+}
+.d-item .img image{
+  width: 40px;
+  height: 40px;
+}
+.d-item .num{
+  text-align: center;
+}
+.d-item .num .big{
+  font-size: 18px;
+  color: #0ca294;
+}
+.d-item .num .sub{
+  font-size: 14px;
+  color: #999;
+  padding-left: 2px;
+}
+.d-item .desc{
+  font-size: 14px;
+  text-align: center;
+  color: #666;
+}
+.tags .advice{
+  color: #d77f57;
+}
+.sch-button{
+  width: 60px;
+  height: 60px;
+  border-radius: 30px;
+  position: fixed;
+  right: 4%;
+  bottom: 135px;
+  background-color: #d77f57;
+  color: #fff;
+  font-size: smaller;
+  text-align: center;
+  box-shadow: 2px 2px 5px #ccc;
+}
+.sch-button van-icon{
+  font-size: 26px;
+  height: 35px;
+  margin-bottom: -3px;
+}

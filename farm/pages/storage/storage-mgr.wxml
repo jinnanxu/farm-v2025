@@ -1,0 +1,48 @@
+<wxs src="../../utils/date.wxs" module="filter" />
+<view class="note-list">
+  <view class="no-data" wx:if="{{storageList.totalrecord==0}}">暂无数据</view>
+  <view class="item" wx:for="{{storageList.records}}" wx:key="noteId" bindtap="toFieldDetail" data-fid='{{item.fieldId}}'>
+    <view class="pet-title">
+      <text class="mtitle">{{item.goodsName}}</text>
+      <view class="tags">
+        <view class="tag-item orange" wx:if="{{item.goodsType=='农药'||item.goodsType=='化肥'}}">{{item.goodsType}}</view>
+        <view class="tag-item green" wx:elif="{{item.goodsType=='作物收储'}}">{{item.goodsType}}</view>
+        <view class="tag-item primary" wx:else>{{item.goodsType}}</view>
+      </view>
+    </view>
+    <view class="desc" wx:if="{{item.operateType==1}}">
+      <text class="c-gray">入库数量：</text>{{item.quantity}}<text class="c-gray">({{item.unit}})</text>
+    </view>
+    <view class="desc" wx:if="{{item.operateType==2}}">
+      <text class="c-gray">出库数量：</text>{{item.quantity}}<text class="c-gray">({{item.unit}})</text>
+    </view>
+    <view class="desc" wx:if="{{item.operateType==3}}">
+      <text class="c-gray">盘点数量：</text>{{item.currAmount}}<text class="c-gray">({{item.unit}})</text>
+    </view>
+    <view class="desc">
+      <text class="c-gray"><text wx:if="{{item.operateType==1}}">入库</text><text wx:if="{{item.operateType==2}}">出库</text><text wx:if="{{item.operateType==3}}">盘点</text>后数量：</text>{{item.currAmount}}<text class="c-gray">({{item.unit}})</text>
+    </view>
+    <view class="delete tags" bindtap="onConfirmDelete" data-fid='{{item.materialId}}'>
+      <view class="stime">{{filter.format(item.operateTime, 'YY-MM-DD hh:mm')}}</view>
+      <view class="inout" wx:if="{{item.operateType==1}}">
+        <image src="/images/instorage.png" class="loc"></image>
+        <view class="txt">入库</view>
+      </view>
+      <view class="inout" wx:if="{{item.operateType==2}}">
+        <image src="/images/outstorage.png" class="loc"></image>
+        <view class="txt">出库</view>
+      </view>
+      <view class="inout" wx:if="{{item.operateType==3}}">
+        <image src="/images/discount-fill.png" class="loc"></image>
+        <view class="txt">盘点</view>
+      </view>
+    </view>
+  </view>
+  <view class="no-more" wx:if="{{noMore}}">——已全部加载——</view>
+</view>
+<view class="add-button" bindtap="toAddPage" data-category="field">
+  <view>
+    <image src="/images/edit.png"></image>
+  </view>
+  <view>添加</view>
+</view> 

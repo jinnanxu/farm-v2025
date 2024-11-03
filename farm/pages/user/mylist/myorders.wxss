@@ -1,0 +1,7 @@
+/* pages/user/mylist/myorders.wxss */
+.order-title{
+  font-size: 14px;
+}
+.price{
+  color: #D77F57;
+}

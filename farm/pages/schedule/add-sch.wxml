@@ -1,0 +1,29 @@
+<view  class="user-file">
+  <view class="val-input">
+    <view class="label">工作内容</view>
+    <input bindinput="bindWorkInput" type="text" placeholder="请输入工作内容"></input>
+  </view>
+  <view class="val-input">
+    <view class="label">作业地块</view>
+    <picker bindchange="bindFieldChange" range="{{fieldList}}" range-key="fieldName">
+      <view class="category-txt" wx:if="{{currField!=null}}">{{currField.fieldName}}</view>
+      <view class="category-txt" wx:if="{{currField==null}}" style="color:#999;">-请选择作业地块-</view>
+    </picker>
+  </view>
+  <view class="val-input">
+    <view class="label">计划时间</view>
+    <picker mode="date" start="{{today}}" bindchange="bindDateChange" style="display: inline-block;">
+      <view class="datetime-txt">{{today}}</view>
+    </picker>
+    <picker bindchange="bindStartTimeChange" mode="time" value="08:00" style="display: inline-block; margin-left:20px;">
+      <view class="datetime-txt">{{planTime}}</view>
+    </picker>
+  </view>
+  <view class="val-input">
+    <view class="label">备注信息</view>
+    <textarea bindinput="bindFieldRemarkInput" value="{{material.remark}}" placeholder="请输入备注信息"/>
+  </view>
+  <view class="bottom-btn">
+    <view class="orange-btn fb-btn" bindtap="onSubmitSchedule">提交</view>
+  </view>
+</view>

@@ -1,0 +1,13 @@
+<wxs src="../../../utils/date.wxs" module="filter" />
+<view class="fav-list">
+  <van-cell label="{{item.mobile}}" center wx:for="{{employeeList.records}}" wx:key="blogId">
+    <view slot="title" class="item">
+      <view class="van-cell-text">{{item.nickName}}</view>
+      <view class="del" bindtap="deleteEmployee" data-mid="{{item.userId}}">
+        <van-icon name="delete-o" color="#D77F57"/>
+      </view>
+    </view>
+  </van-cell>
+  <view class="no-more" wx:if="{{noMore}}">——已全部加载——</view>
+  <van-dialog id="van-dialog" />
+</view>

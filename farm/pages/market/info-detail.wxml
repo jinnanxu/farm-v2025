@@ -1,0 +1,42 @@
+<wxs src="../../utils/date.wxs" module="filter" />
+<view class="note-list">
+  <view class="item">
+    <view class="pet-title">
+      <van-tag round color="#D77F57" size="medium" wx:if="{{marketInfo.infoType==1}}">出售</van-tag>
+      <van-tag round color="#41A8A8" size="medium" wx:if="{{marketInfo.infoType==2}}">求购</van-tag>
+      <text>{{marketInfo.title}}</text>
+    </view>
+    <view class="auth-view">
+      <view class="profile">
+        <image src="{{marketInfo.userInfo.pic==null?'http://129.211.222.131:18080/images/20230309132054typ1q.jpg':marketInfo.userInfo.pic}}"></image>
+      </view>
+      <view class="right">
+        <view class="nickname">{{marketInfo.userInfo.nickName}} <text class="ptime">{{filter.format(marketInfo.publishDate, 'YY-MM-DD')}}</text> </view>
+        <view class="location"><text class="gray-txt">电话：</text><text class="mobile">{{marketInfo.mobile}}</text></view>
+      </view>
+      <view class="contact" bindtap="onCall" data-mobile="{{marketInfo.mobile}}">
+        <view class="tel-icon">
+          <van-icon name="phone-circle" />
+        </view>
+        <view class="cnow">立即联系</view>
+      </view>
+    </view>
+    <view class="auth-view market-p">
+      <van-icon name="gold-coin" class="vicon" color="#d77f57"/>
+      <text>价格：</text><text class="price">{{marketInfo.price}}</text>
+    </view>
+    <view class="auth-view market-p" wx:if="{{marketInfo.infoType==1}}">
+      <van-icon name="location" class="vicon" color="#d77f57"/>
+      <text>地址：</text><text class="price">{{marketInfo.address}}</text>
+    </view>
+    <view class="remark">{{marketInfo.detail}}</view>
+    <view class="img-box">
+      <view class="box" wx:for="{{marketInfo.picList}}" wx:for-item="imgItem" wx:for-index="imgIdx" wx:key="imgIdx">
+        <image class="pet-img" mode="aspectFill" src="{{imgItem}}" catchtap="showLargeImage" data-idx="{{imgIdx}}"></image>
+      </view>
+    </view>
+  </view>
+  <view class="bottom-btn">
+    <view class="orange-btn fb-btn" bindtap="toOrderPage" style="margin:0;" data-mid='{{marketInfo.marketInfoId}}'>提交意向订单</view>
+  </view>
+</view>

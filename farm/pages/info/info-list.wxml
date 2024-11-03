@@ -1,0 +1,19 @@
+<wxs src="../../utils/date.wxs" module="filter" />
+<view class="note-list">
+  <view class="item" wx:for="{{infoList.records}}" wx:key="taskId" bindtap="toDetailPage" data-mid='{{item.knowledgeId}}'>
+    <view class="pet-title">
+      <text>{{item.title}}</text>
+    </view>
+    <view>
+      <van-tag round color="#41A8A8" size="medium">{{item.tags}}</van-tag>
+      <text class="fdate">{{filter.format(item.publishDate, 'task-time')}}</text>
+    </view>
+    <view class="remark">{{item.detail}}</view>
+    <!-- <view class="img-box">
+      <view class="box" wx:for="{{item.picList}}" wx:for-item="imgItem" wx:for-index="imgIdx" wx:key="imgIdx">
+        <image class="pet-img" mode="aspectFill" src="{{imgItem}}"></image>
+      </view>
+    </view> -->
+  </view>
+  <view class="no-more" wx:if="{{noMore}}">——已全部加载——</view>
+</view>

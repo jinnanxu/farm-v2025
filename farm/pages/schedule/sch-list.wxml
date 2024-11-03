@@ -1,0 +1,48 @@
+<wxs src="../../utils/date.wxs" module="filter" />
+<view class="filter" wx:if="{{showFilter}}">
+  <view class="ftag {{workStatus==-1?'orange':''}}" data-status="-1" bindtap="onFilter">全部</view>
+  <view class="ftag {{workStatus==0?'orange':''}}" data-status="0" bindtap="onFilter">未开始</view>
+  <view class="ftag {{workStatus==1?'orange':''}}" data-status="1" bindtap="onFilter">进行中</view>
+  <view class="ftag {{workStatus==2?'orange':''}}" data-status="2" bindtap="onFilter">已完成</view>
+</view>
+<view class="sch-list">
+  <view class="no-data" wx:if="{{schList.totalrecord==0}}">暂无数据</view>
+  <view class="item" wx:for="{{schList.records}}" wx:key="scheduleId" data-sid='{{item.scheduleId}}'>
+    <view class="sch-content">
+      <text class="meta">计划时间：</text>
+      <text class="sch-time-success">{{filter.format(item.planTime, 'task-time')}}</text>
+    </view>
+    <view class="sch-content">
+      <text class="meta">工作内容：</text>
+      <text class="sch-time-success">{{item.workContent}}</text>
+    </view>
+    <view class="sch-content">
+      <text class="meta">操作地块：</text>
+      <text>{{item.fieldname}}</text>
+    </view>
+    <view class="sch-content inline-item" wx:if="{{item.workStatus>0}}">
+      <text class="meta">开始时间：</text><text>{{filter.format(item.startTime, 'task-time')}}</text>
+    </view>
+    <view class="sch-content inline-item ml10" wx:if="{{item.workStatus==2}}">
+      <text class="meta">完成时间：</text><text>{{filter.format(item.endTime, 'task-time')}}</text>
+    </view>
+    <view class="sch-content">
+      <text class="meta">作业状态：</text>
+      <view class="status primary" wx:if="{{item.workStatus==1}}">进行中</view>
+      <view class="status green" wx:if="{{item.workStatus==2}}">已完成</view>
+      <view class="status orange" wx:if="{{item.workStatus==0}}">未开始</view>
+    </view>
+    <view class="tags" wx:if="{{item.workStatus==0}}" bindtap="onStartWork" data-sid="{{item.scheduleId}}">
+      <view class="tag-item orange">开始作业</view>
+    </view>
+    <view class="tags" wx:if="{{item.workStatus==1}}">
+      <view class="tag-item primary" bindtap="onFinishtWork" data-sid="{{item.scheduleId}}">结束作业</view>
+    </view>
+  </view>
+</view>
+<view class="add-button" bindtap="toAddPage" data-category="field">
+  <view>
+    <image src="/images/edit.png"></image>
+  </view>
+  <view>新建</view>
+</view> 

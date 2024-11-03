@@ -1,0 +1,103 @@
+.note-list{
+  line-height: 28px;
+  padding: 0 3%;
+  color: #666;
+  box-sizing: border-box;
+}
+.note-list .desc{
+  color: #666;
+}
+.item .remark{
+  margin-bottom: 4px;
+  font-size: 14px;
+  color: #888;
+}
+.img-box{
+  box-sizing: border-box;
+  vertical-align: top;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  margin-bottom: 5vh;
+}
+.note-list .meta-data{
+  display: inline-block;
+  width: 54%;
+  padding-left: 4px;
+  box-sizing: border-box;
+}
+.note-list .pet-img{
+  width: 31%;
+  height: 100px;
+  margin-bottom: 10px;
+  margin: 0 1%;
+}
+.note-list .pet-title{
+  font-size: 16px;
+  color: #333;
+  font-weight: bold;
+}
+.note-list .item{
+  border-bottom: 1px solid #e2e2e2;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.note-list .item .desc{
+  font-size: 14px;
+}
+.note-list .desc-p{
+  color: #999;
+  font-size: 14px;
+  line-height: 22px;
+}
+.note-list .desc-p .content{
+  color: #666;
+}
+.note-list .desc-p2{
+  color: #666;
+  font-size: 14px;
+}
+.desc-p .icon, .desc-p2 .icon{
+  width: 22px;
+  height: 22px;
+  padding-right: 4px;
+  vertical-align:middle;
+}
+.ccc-txt{color:#ccc;}
+.category{
+  padding: 10px 0;
+  box-shadow: 0px 1px 8px rgba(0,0,0,.2);
+}
+.category .item{
+  display: inline-block;
+  width: 25%;
+  text-align: center;
+  padding: 20px 0;
+  color: #666;
+}
+.category .item image{
+  width: 50px;
+  height: 50px;
+}
+.category .item .txt{
+  padding-top: 10px;
+  font-size-adjust: 18px;
+}
+.note-list .tags van-tag{
+  margin-right: 8px;
+}
+.tags .file-cnt{
+  float: right;
+  font-size: 14px;
+}
+.tags{
+  clear: both;
+}
+.tags .advice{
+  float: right;
+  font-size: 14px;
+  color: #666;
+}
+.content_richText [src]{
+  max-width: 100%;
+}

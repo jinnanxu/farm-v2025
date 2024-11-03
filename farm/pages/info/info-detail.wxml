@@ -1,0 +1,16 @@
+<wxs src="../../utils/date.wxs" module="filter" />
+<view class="note-list">
+  <view class="item">
+    <view class="pet-title">
+      <text>{{item.title}}</text>
+    </view>
+    <view class="tags">
+      <van-tag round color="#D77F57" size="medium">{{item.tags}}</van-tag>
+      <text class="desc">{{filter.format(item.publishDate, 'task-time')}}</text>
+    </view>
+    <rich-text nodes="{{item.detail}}" class="content_richText"></rich-text>
+    <!-- <view class="img-box">
+      <image class="pet-img" mode="aspectFill" wx:for="{{item.picList}}" wx:for-item="imgItem" wx:for-index="imgIdx" src="{{imgItem}}" wx:key="id" catchtap="showLargeImage" data-idx="{{imgIdx}}"></image>
+    </view> -->
+  </view>
+</view>

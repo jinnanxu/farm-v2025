@@ -1,0 +1,80 @@
+/* miniprogram/pages/select_role/role.wxss */
+.select-view{
+  margin-top: 40%;
+}
+.user-file{
+  font-size: 16px;
+  padding: 0 2%;
+}
+.val-input{
+  margin-bottom: 15px;
+}
+.user-file .label{
+  color: #666;
+  padding: 8px 0;
+  font-weight: bold;
+  font-size: 16px;
+}
+.user-file input, .user-file textarea{
+  width: 100%;
+  box-sizing: border-box;
+  padding: 5px 2%;
+  border: 1px solid #d77f57;
+}
+.category-txt{
+  color: #d77f57;
+  font-size: 18px;
+}
+.user-file textarea{height: 100px;}
+.user-file input{height: 35px;}
+.coach-list{
+  clear: both;
+  border-bottom: 1px solid #ccc;
+  padding: 10px 0;
+}
+.coach-list .pic{
+  width: 30%;
+  display: inline-block;
+  text-align: center;
+  vertical-align: top;
+}
+.coach-list .pic image{
+  width: 60%;
+  height: 100px;
+}
+.coach-list-2 .pic image{
+  width: 80%;
+  height: 80px;
+}
+.coach-list .coach-item{
+  display: inline-block;
+  width: 68%;
+}
+.coach-item .list-item{
+  padding: 5px 0;
+  font-size: 16px;
+  line-height: 25px;
+}
+.coach-img{
+  margin: 0 auto;
+  display: block;
+  margin-bottom: 15px;
+}
+.price{
+  color: #d77f57;
+  font-weight: bold;
+}
+.user-file .orange-btn{
+  margin-top: 15px;
+}
+.val-input .green-btn{
+  background-color: #23bd2b;
+}
+.bottom-btn{
+  margin-bottom: 20px;
+  text-align: center;
+}
+.input-desc{
+  color: #999;
+  font-weight: normal;
+}

@@ -1,0 +1,52 @@
+<wxs src="../../utils/date.wxs" module="filter" />
+<view class="note-list">
+  <view class="item">
+    <view class="pet-title">
+      <text>{{question.title}}</text>
+    </view>
+    <view class="auth-view">
+      <view class="right">
+        <van-tag round color="#D77F57" size="medium" wx:if="{{question.question.status==1}}">待回答</van-tag>
+        <van-tag round color="#0084ff" size="medium" wx:if="{{question.question.status==2}}">解决中</van-tag>
+        <van-tag round color="#41A8A8" size="medium" wx:if="{{question.question.status==3}}">已解决</van-tag>
+        <view class="nickname ques-user">{{question.question.askUserInfo.nickName}} <text class="ptime">于{{filter.format(question.question.publishTime, 'YY-MM-DD')}}提问</text></view>
+      </view>
+    </view>
+    <view class="remark">{{question.question.questionContent}}</view>
+    <view class="img-box">
+      <view class="box" wx:for="{{question.question.picList}}" wx:for-item="imgItem" wx:for-index="imgIdx" wx:key="imgIdx">
+        <image class="pet-img" mode="aspectFill" src="{{imgItem}}" catchtap="showLargeImage" data-idx="{{imgIdx}}"></image>
+      </view>
+    </view>
+    <block  wx:if="{{question.question.status>1}}">
+      <view class="auth-view answer-view" wx:for="{{question.answer}}">
+        <view class="right">
+          <block wx:if="{{item.answerType==1}}">
+            <van-tag round color="#41A8A8" size="medium">解答专家</van-tag>
+            <view class="nickname">
+              <text class="bold">{{item.expert.realName}}</text>
+              <text>{{item.expert.workDept}}</text>
+              <text>[{{item.expert.title}}]</text>
+            </view>
+          </block>
+          <block wx:else>
+            <van-tag round color="#d77f57" size="medium">农户追问</van-tag>
+          </block>
+          <view class=""><text class="ptime">{{filter.format(item.answerTime, 'full-time')}}</text></view>
+        </view>
+        <view class="remark">{{item.content}}</view>
+      </view>
+      <view class="user-file" wx:if="{{question.question.status==2}}" style="margin-top: 25px;">
+        <view class="val-input">
+          <view class="label">我要追问：</view>
+          <textarea bindinput="bintDetailInput" value="{{material.remark}}" placeholder="请输入要继续询问专家的内容"/>
+        </view>
+        <view class="bottom-btn">
+          <view class="orange-btn fb-btn" bindtap="publishAsk">继续提问</view>
+          <view class="green-btn fb-btn" bindtap="onFinish">结束问题</view>
+        </view>
+      </view>
+    </block>
+    <view class="remark" wx:else="">--请耐心等候农业技术专家的解答--</view>
+  </view>
+</view>

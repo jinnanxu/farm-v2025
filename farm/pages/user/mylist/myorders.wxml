@@ -1,0 +1,23 @@
+<wxs src="../../../utils/date.wxs" module="filter" />
+<view class="fav-list">
+  <van-cell label="{{filter.format(item.createTime, 'YY-MM-DD')}}" is-link center wx:for="{{orderList.records}}" wx:key="blogId" bind:click="toBlogDetail" data-mid="{{item.orderId}}">
+    <view slot="title">
+      <view class="van-cell-text order-title">
+        <van-tag color="#D77F57" round size="medium" wx:if="{{item.status==1}}">价格洽谈中</van-tag>
+        <van-tag color="#41A8A8" round size="medium" wx:if="{{item.status==2}}">意向达成</van-tag>
+        {{item.marketInfo.title}}
+      </view>
+      <view class="van-cell-text order-title">
+        买家出价：
+        <text wx:if="{{item.buyerPrice!=''}}" class="price">{{item.buyerPrice}}</text>
+        <text wx:else>待报价</text>
+      </view>
+      <view class="van-cell-text order-title">
+        卖家出价：
+        <text wx:if="{{item.sellerPrice!=''}}" class="price">{{item.sellerPrice}}</text>
+        <text wx:else>待报价</text>
+      </view>
+    </view>
+  </van-cell>
+  <view class="no-more" wx:if="{{noMore}}">——已全部加载——</view>
+</view>

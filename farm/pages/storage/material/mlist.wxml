@@ -1,0 +1,34 @@
+<wxs src="../../../utils/date.wxs" module="filter" />
+<view class="note-list">
+  <view class="no-data" wx:if="{{materialList.totalrecord==0}}">暂无数据，请添加物资</view>
+  <view class="item" wx:for="{{materialList.records}}" wx:key="noteId" bindtap="toFieldDetail" data-fid='{{item.fieldId}}'>
+    <view class="pet-title">
+      <text class="mtitle">{{item.name}}</text>
+      <view class="tags">
+        <view class="tag-item orange" wx:if="{{item.type=='农药'||item.type=='化肥'}}">{{item.type}}</view>
+        <view class="tag-item green" wx:elif="{{item.type=='作物收储'}}">{{item.type}}</view>
+        <view class="tag-item primary" wx:else>{{item.type}}</view>
+        <view class="tag-item" wx:if="{{item.status==-1}}">已删除</view>
+      </view>
+    </view>
+    <view class="desc">
+      <!-- <image src="/images/unit.png" class="loc"></image> -->
+      <text class="c-gray">计量单位：</text>{{item.unit}}
+    </view>
+    <view class="remark" wx:if="{{item.remark!=null}}">{{item.remark}}</view>
+    <view class="delete" bindtap="onConfirmDelete" data-fid='{{item.materialId}}'>
+      <van-icon name="delete" />
+    </view>
+    <!-- <view class="pic-list">
+      <view class="img" wx:for="{{item.pic}}">
+        <image src="{{pitem}}"></image>
+      </view>
+    </view> -->
+  </view>
+</view>
+<view class="add-button" bindtap="toAddPage" data-category="field">
+  <view>
+    <image src="/images/edit.png"></image>
+  </view>
+  <view>添加</view>
+</view> 

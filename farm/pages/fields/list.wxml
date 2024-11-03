@@ -1,0 +1,61 @@
+<!--pages/pet/list.wxml-->
+<wxs src="../../utils/date.wxs" module="filter" />
+<!-- <view class="index-head">
+  <input class="search-ipt" bindinput="bindKwChange" type="text"/>
+  <button class="search-btn" bindtap="searchNote">搜索</button>
+</view> -->
+<view class="note-list" wx:if="{{category=='field'}}">
+  <!--开始循环地块列表-->
+  <view class="item" wx:for="{{fieldList.records}}" wx:key="noteId" bindtap="toFieldDetail" data-fid='{{item.fieldId}}'>
+    <view class="pet-title">
+      <text>{{item.fieldName}}</text>
+      <view class="tags">
+        <view class="tag-item orange">{{item.area}}</view>
+        <view class="tag-item" wx:if="{{item.status==-1}}">已删除</view>
+      </view>
+    </view>
+    <view class="desc">
+      <image src="/images/map.png" class="loc"></image>
+      {{item.location}}
+    </view>
+    <view class="remark" wx:if="{{item.remark!=null}}">{{item.remark}}</view>
+    <view class="delete" bindtap="onConfirmDelete" data-fid='{{item.fieldId}}' data-category="field">
+      <!-- <image src="/images/delete.png"></image> -->
+      <van-icon name="delete" />
+    </view>
+  </view>
+  <!--循环结束-->
+</view>
+<view class="note-list" wx:if="{{category=='crop'}}">
+  <!--开始循环作物列表-->
+  <view class="no-data" wx:if="{{cropList.totalrecord==0}}">暂无数据，请添加作物</view>
+  <view class="item" wx:for="{{cropList.records}}" wx:key="cropId" bindtap="toCropDetail" data-cid='{{item.cropId}}'>
+    <view class="pet-title">
+      <text>{{item.cropName}}</text>
+      <view class="tags">
+        <view class="tag-item orange" wx:if="{{item.category=='果类'}}">{{item.category}}</view>
+        <view class="tag-item green" wx:elif="{{item.category=='蔬菜'}}">{{item.category}}</view>
+        <view class="tag-item primary" wx:else>{{item.category}}</view>
+        <view class="tag-item" wx:if="{{item.status==-1}}">已删除</view>
+      </view>
+    </view>
+    <view class="remark" wx:if="{{item.remark!=null}}">{{item.remark}}</view>
+    <view class="delete" bindtap="onConfirmDelete" data-fid='{{item.cropId}}' data-category="crop">
+      <van-icon name="delete" />
+    </view>
+  </view>
+</view>
+<van-dialog id="van-dialog" />
+<view class="add-button" bindtap="toAddPage" data-category="field" wx:if="{{category=='field'}}">
+  <view>
+    <image src="/images/edit.png"></image>
+  </view>
+  <view>添加</view>
+</view> 
+<view class="add-button" bindtap="toAddPage" data-category="crop" wx:if="{{category=='crop'}}">
+  <view>
+    <image src="/images/edit.png"></image>
+  </view>
+  <view>添加</view>
+</view> 
+

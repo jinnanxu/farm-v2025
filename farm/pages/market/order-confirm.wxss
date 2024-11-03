@@ -1,0 +1,47 @@
+/* miniprogram/pages/select_role/role.wxss */
+.select-view{
+  margin-top: 40%;
+}
+.user-file{
+  font-size: 16px;
+  padding: 0 2%;
+}
+.val-input{
+  margin-bottom: 15px;
+}
+.user-file .val-input .tip{
+  line-height: 22px;
+  color: #d77f57 !important;
+  font-size: 14px;
+  padding-top: 0;
+}
+.user-file .label{
+  color: #666;
+  padding: 6px 0;
+  font-size: 16px;
+}
+.user-file input{
+  width: 100%;
+  box-sizing: border-box;
+  padding: 5px 2%;
+  border-bottom: 1px solid #86c7cc;
+}
+.user-file .input2{
+  border: 1px solid #86c7cc;
+}
+.category-txt{
+  color: #41a8a8;
+  font-size: 16px;
+}
+.user-file textarea{height: 100px;}
+.user-file input{height: 35px;}
+.user-file .orange-btn{
+  margin-top: 15px;
+}
+.bottom-btn{
+  margin: 20px 0;
+  text-align: center;
+}
+.bottom-btn .fb-btn{
+  background-color: #41a8a8;
+}

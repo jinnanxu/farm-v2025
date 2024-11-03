@@ -1,0 +1,38 @@
+<view  class="user-file">
+  <!-- <view class="h3 gray-txt txt-center">出入库操作</view> -->
+  <view class="val-input">
+    <view class="label">出入库类型</view>
+    <picker bindchange="bindOperateChange" range="{{category}}">
+      <view class="category-txt">{{category[optIdx]}}</view>
+    </picker>
+  </view>
+  <view class="val-input">
+    <view class="label">物资名称</view>
+    <picker bindchange="bindMaterialChange" range="{{materials}}" range-key="name">
+      <view class="category-txt">{{materials[mindex].name}}</view>
+    </picker>
+  </view>
+  <view class="val-input">
+    <view class="label">计量单位</view>
+    <input type="text" readonly="readonly" value="{{currMaterial.unit}}" disabled="disabled"></input>
+  </view>
+  <view class="val-input" wx:if="{{categoryIndx<2}}">
+    <view class="label" wx:if="{{categoryIndx<2}}">发生数量</view>
+    <view class="label" wx:if="{{categoryIndx==2}}">盘点后数量</view>
+    <input bindinput="bindQuanInput" type="number"></input>
+  </view>
+  <view class="val-input" wx:if="{{categoryIndx==2}}">
+    <view class="label">盘点后数量</view>
+    <input bindinput="bindCurrquantityInput" type="number"></input>
+  </view>
+  <!-- <view class="val-input">
+    <view class="label">图片</view>
+    <image wx:if="{{pics.length!=0}}" mode="aspectFit" class="coach-img" src="{{item}}" wx:for="{{pics}}" wx:key="id"></image>
+    <view class="bottom-btn">
+      <view class="green-btn mt0 fb-btn" bindtap="chooseImg">选择图片</view>
+    </view>
+  </view> -->
+  <view class="bottom-btn">
+    <view class="orange-btn fb-btn" bindtap="publishMaterial">提交</view>
+  </view>
+</view>

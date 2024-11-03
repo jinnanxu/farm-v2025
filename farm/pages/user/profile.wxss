@@ -1,0 +1,60 @@
+/* pages/user/profile.wxss */
+.content{
+  background-color: #f2f2f2;
+  padding-bottom: 2vh;
+  height: 100vh;
+}
+.profile{
+  margin-bottom: 5px;
+  padding-top: 10px;
+}
+.profile .profile-img{
+  height: 220rpx;
+  width: 220rpx;
+  border-radius: 150px;
+}
+.profile .item{
+  text-align: center;
+  padding-top: 10px;
+}
+.profile .item .nickname{
+  font-size: 20px;
+  color: #41A8A8;
+  margin-bottom: 5px;
+}
+.profile .item .count{
+  margin: 8px 0 12px 0;
+  font-size: 14px;
+  color: #5d5d66;
+}
+.profile .sno{
+  color: #5d5d5d;
+  font-size: 14px;
+}
+.profile .count .meta{
+  font-size: 16px;
+  padding-right: 8rpx;
+}
+.profile .count .m2{
+  padding-left: 40rpx;
+}
+.profile .van-cell-text{
+  font-size: 16px;
+}
+.profile .van-cell .van-icon{
+  color: #d77f57;
+  font-size: 22px;
+  padding-right: 5px;
+}
+.profile .van-cell .van-icon-arrow{
+  color: #969799;
+  font-size: 18px;
+}
+.logout-btn{
+  margin: 50rpx 0;
+  text-align: center;
+}
+.logout-btn van-button{
+  display: block;
+  margin-bottom: 20rpx;
+}

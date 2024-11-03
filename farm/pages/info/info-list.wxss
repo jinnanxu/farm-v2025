@@ -1,0 +1,154 @@
+.note-list{
+  line-height: 28px;
+  padding: 0 3%;
+  color: #666;
+  box-sizing: border-box;
+}
+.note-list .meta-data{
+  display: inline-block;
+  width: 54%;
+  padding-left: 4px;
+  box-sizing: border-box;
+}
+.note-list .pet-title{
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 4px;
+  font-weight: bold;
+}
+.note-list .item{
+  border-bottom: 1px solid #e2e2e2;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.note-list .item .desc{
+  font-size: 14px;
+}
+.note-list .fdate{
+  color: #888;
+  font-size: 14px;
+  padding-left: 5px;
+}
+.note-list .desc-p2{
+  color: #666;
+  font-size: 14px;
+}
+.desc-p .icon, .desc-p2 .icon{
+  width: 22px;
+  height: 22px;
+  padding-right: 4px;
+  vertical-align:middle;
+}
+.note-list .pet-title van-tag{
+  margin-right: 8px;
+}
+.note-list .market-title{
+  font-size: 16px;
+  padding-left: 6px;
+}
+.market-p .vicon{
+  font-size: 18px;
+  padding-right: 4px;
+}
+.note-list{
+  line-height: 28px;
+  padding: 0 3%;
+  color: #666;
+  box-sizing: border-box;
+}
+.note-list .desc{
+  margin-bottom: 6px;
+}
+.note-list .desc{
+  margin-bottom: 6px;
+  color: #666;
+}
+.item .remark{
+  clear: both;
+  margin-bottom: 4px;
+  font-size: 14px;
+  line-height: 24px;
+  color: #888;
+  word-break: break-all;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+.img-box{
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+}
+.img-box .box{
+  width: 235rpx;
+  text-align: center;
+}
+.note-list .tags .tag-item{
+  display: inline-block;
+  margin-right: 8px;
+  height: 20px;
+  line-height: 20px;
+  border-radius: 10px;
+  color: #fff;
+  background-color: #999;
+  padding: 0 8px;
+  font-size: 14px;
+}
+.auth-view .nickname{
+  color: #41a8a8;
+  padding-right: 8px;
+  font-size: 14px;
+}
+.auth-view .location{
+  color: #e2a388;
+  font-size: 14px;
+}
+.location .mobile{
+  text-decoration: underline;
+}
+.auth-view .location .van-icon{
+  font-size: 14px;
+}
+.auth-view{
+  position: relative;
+}
+.auth-view .ptime{
+  font-size: 14px;
+  color: #888;
+  padding-left: 6px;
+}
+.auth-view .right{
+  display: inline-block;
+  height: 55px;
+  vertical-align: top;
+}
+.auth-view .profile{
+  display: inline-block;
+  height: 55px;
+  width: 55px;
+  padding: 2px;
+}
+.auth-view .profile image{
+  height: 50px;
+  width: 50px;
+  border-radius: 25px;
+}
+.auth-view .contact{
+  position: absolute;
+  right: 0;
+  top: 0;
+  text-align: center;
+}
+.contact .tel-icon{
+  font-size: 26px;
+  color: #41a8a8;
+}
+.contact .cnow{
+  font-size: 12px;
+  color: #666;
+}
+.tags .van-tag{
+  margin-right: 6px;
+}

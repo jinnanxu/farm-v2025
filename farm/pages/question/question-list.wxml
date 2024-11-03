@@ -1,0 +1,29 @@
+<wxs src="../../utils/date.wxs" module="filter" />
+<view class="note-list">
+  <view class="item" wx:for="{{questionList.records}}" wx:key="taskId" bindtap="toDetailPage" data-qid='{{item.questionId}}'>
+    <view class="pet-title">
+      <text>{{item.title}}</text>
+    </view>
+    <view class="auth-view">
+      <view class="right">
+        <van-tag round color="#D77F57" size="medium" wx:if="{{item.status==1}}">待回答</van-tag>
+        <van-tag round color="#0084ff" size="medium" wx:if="{{item.status==2}}">解决中</van-tag>
+        <van-tag round color="#41A8A8" size="medium" wx:if="{{item.status==3}}">已解决</van-tag>
+        <view class="nickname">{{item.userInfo.nickName}} <text class="ptime">{{filter.format(item.publishTime, 'YY-MM-DD')}}</text> </view>
+      </view>
+    </view>
+    <view class="remark">{{item.questionContent}}</view>
+    <view class="img-box">
+      <view class="box" wx:for="{{item.picList}}" wx:for-item="imgItem" wx:for-index="imgIdx" wx:key="imgIdx">
+        <image class="pet-img" mode="aspectFill" src="{{imgItem}}"></image>
+      </view>
+    </view>
+  </view>
+  <view class="no-more" wx:if="{{noMore}}">——已全部加载——</view>
+</view>
+<view class="add-button" bindtap="toAddPage" data-category="field">
+  <view>
+    <image src="/images/edit.png"></image>
+  </view>
+  <view>提问</view>
+</view> 

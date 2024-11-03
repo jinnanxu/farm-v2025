@@ -1,0 +1,50 @@
+<!--pages/user/profile.wxml-->
+<view class="content">
+  <view class="profile">
+    <view class="item">
+      <image class="profile-img" src="{{userInfo.pic==null?'http://129.211.222.131:18080/images/20230309132054typ1q.jpg':userInfo.pic}}"></image>
+      <view class="nickname">
+      {{userInfo.nickName}}
+      </view>
+      <view class="sno">
+        <text wx:if="{{userInfo.role==1}}">{{userInfo.farmName}} [农户]</text>
+        <text wx:if="{{userInfo.role==2}}">采购商</text>
+      </view>
+    </view>
+  </view>
+  <view class="profile" wx:if="{{userInfo.role==1}}">
+    <van-cell value="" size="large" icon="apps-o" is-link link-type="navigateTo" url="/pages/fields/list?category=field">
+      <view slot="title"><view class="van-cell-text">地块管理</view></view>
+    </van-cell>
+    <van-cell value="" size="large" icon="star-o" is-link link-type="navigateTo" url="/pages/fields/list?category=crop">
+      <view slot="title"><view class="van-cell-text">作物类别管理</view></view>
+    </van-cell>
+    <van-cell value="" size="large" icon="flower-o" is-link link-type="navigateTo" url="/pages/fields/plant/plant-mgr">
+      <view slot="title"><view class="van-cell-text">种植管理</view></view>
+    </van-cell>
+    <van-cell value="" size="large" icon="volume-o" is-link link-type="navigateTo" url="/pages/user/mylist/mymarkets">
+      <view slot="title"><view class="van-cell-text">我的市场信息</view></view>
+    </van-cell>
+    <van-cell value="" size="large" icon="orders-o" is-link link-type="navigateTo" url="/pages/user/mylist/myorders">
+      <view slot="title"><view class="van-cell-text">我的意向订单</view></view>
+    </van-cell>
+    <van-cell value="" size="large" icon="question-o" is-link link-type="navigateTo" url="/pages/user/mylist/myquestions">
+      <view slot="title"><view class="van-cell-text">我的技术咨询</view></view>
+    </van-cell>
+  </view>
+  <view class="profile" wx:if="{{userInfo.role==2}}">
+    <van-cell value="" size="large" icon="volume-o" is-link link-type="navigateTo" url="/pages/user/mylist/mymarkets">
+      <view slot="title"><view class="van-cell-text">我的市场信息</view></view>
+    </van-cell>
+    <van-cell value="" size="large" icon="orders-o" is-link link-type="navigateTo" url="/pages/user/mylist/myorders">
+      <view slot="title"><view class="van-cell-text">我的意向订单</view></view>
+    </van-cell>
+    <van-cell value="" size="large" icon="question-o" is-link link-type="navigateTo" url="/pages/user/mylist/myquestions">
+      <view slot="title"><view class="van-cell-text">我的技术咨询</view></view>
+    </van-cell>
+  </view>
+  <view class="logout-btn" wx:if="{{!notLogin}}">
+    <van-button icon="edit" bind:click="toModifyProfile" color="#41a8a8">修改信息</van-button>
+    <van-button type="warning" icon="close" bind:click="logout" wx:if="{{!notLogin}}">退出登录</van-button>
+  </view>
+</view>

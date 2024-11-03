@@ -1,0 +1,26 @@
+<view  class="user-file">
+  <view class="val-input">
+    <view class="label">标题</view>
+    <input bindinput="bindTitleInput" type="text" value="{{market.name}}" placeholder="请输入问题标题"></input>
+  </view>
+  <view class="val-input">
+    <view class="label">详细描述</view>
+    <textarea bindinput="bintDetailInput" placeholder="请详细描述您的问题"/>
+  </view>
+  <view class="">
+    <view class="label">附图(可选)</view>
+    <view class="img-list">
+      <view wx:if="{{petImg.length!=0}}" class="upload-img" wx:for="{{uploadImgs}}" wx:key="id">
+        <image mode="aspectFit" class="pic" src="{{item}}"></image>
+        <image class="del-btn" src="/images/delete.png" data-idx="{{index}}" bindtap="deletePic"></image>
+      </view>
+      <view class="upload-img" bindtap="chooseImg" wx:if="{{uploadImgs.length<9}}">
+        <image src="/images/camera.png" mode="aspectFit" class="camera-icon"></image>
+      </view>
+    </view>
+  </view>
+  <view class="bottom-btn">
+    <view class="orange-btn fb-btn" bindtap="publishQuestion" style="margin:0;">马上提问</view>
+  </view>
+  <view class="opt-btns" style="height:15px;"></view>
+</view>

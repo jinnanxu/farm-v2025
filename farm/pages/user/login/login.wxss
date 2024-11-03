@@ -1,0 +1,40 @@
+/* miniprogram/pages/login/login.wxss */
+.container{
+  margin-top: 0;
+}
+.reg-btn{
+  background-color: #23bd2b;
+  margin-top: 20px;
+}
+.service-select{
+  padding: 30px 2%;
+}
+.service-select .tip{
+  padding-bottom: 10px;
+  padding-left: 10px;
+}
+.service-item{
+  padding: 8px 10px;
+}
+.submit-btn{
+  padding: 15px 0;
+}
+.val-input{
+  padding: 10px 0;
+  width: 60%;
+  margin: 0 auto;
+}
+.val-input input{
+  border: 1px #5bc0de solid;
+  height: 35px;
+  font: 18px;
+  padding: 5px 8px;
+}
+.val-input .meta{
+  color: #999;
+  font-size: 16px;
+  padding-bottom: 5px;
+}
+.btns{
+  margin-top: 25px;
+}

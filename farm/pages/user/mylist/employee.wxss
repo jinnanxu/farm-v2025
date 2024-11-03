@@ -1,0 +1,10 @@
+/* pages/user/mylist/employee.wxss */
+.item{
+  position: relative;
+}
+.item .del{
+  position: absolute;
+  right: 10rpx;
+  top: 5px;
+  font-size: 22px;
+}

@@ -1,0 +1,26 @@
+<wxs src="../../utils/date.wxs" module="filter" />
+<view class="note-list">
+  <view class="item">
+    <view class="pet-title">
+      <text>{{item.field}}：{{item.taskType}}</text>
+      <view class="desc">{{filter.format(item.startTime, 'task-time')}}</view>
+    </view>
+    <view class="tags">
+      <van-tag round color="#D77F57" size="medium">{{item.crop}}</van-tag>
+      <van-tag round color="#41A8A8" size="medium">{{item.period}}</van-tag>
+      <view class="advice" wx:if="{{item.weather!=null}}">
+        <!-- 天气 -->
+        <text>{{item.weather}} {{item.temp}}°C</text>
+      </view>
+    </view>
+    <view class="remark" wx:if="{{item.taskDetail!=null}}">{{item.taskDetail}}</view>
+    <view class="img-box">
+      <image class="pet-img" mode="aspectFill" wx:for="{{item.picList}}" wx:for-item="imgItem" wx:for-index="imgIdx" src="{{imgItem}}" wx:key="id" catchtap="showLargeImage" data-idx="{{imgIdx}}"></image>
+    </view>
+  </view>
+  <view wx:if="{{item.advice!=null}}">
+    <view class="advice-title">专家建议：</view>
+    <view class="expert">{{item.adviceExpert}}</view>
+    <view class="advice-content">{{item.advice}}</view>
+  </view>
+</view>

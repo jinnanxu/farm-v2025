@@ -1,0 +1,54 @@
+<view class="container" wx:if="{{!inputForm}}">
+  <view class="reg-title">
+    角色选择
+  </view>
+  <view class="role-btns">
+    <van-button icon="manager" color="#41A8A8" block bindtap="activeFarmer">农场主</van-button>
+    <van-button icon="bookmark" color="#D77F57" block bindtap="activePurchaser">农产品采购员</van-button>
+  </view>
+</view>
+
+<view class="container" wx:if="{{userInfo.role==1&&inputForm}}">
+  <view class="reg-title">
+    录入农户信息
+  </view>
+  <view class="val-input">
+    <view class="meta">用户昵称</view>
+    <input type="text" value="{{userInfo.nickname}}" bindinput="onInputNickName"></input>
+  </view>
+  <view class="val-input">
+    <view class="meta">手机号</view>
+    <input type="text" value="{{userInfo.mobile}}" bindinput="onInputMobile"></input>
+  </view>
+  <view class="val-input">
+    <view class="meta">农场名称</view>
+    <input type="text" value="{{userInfo.farmName}}" bindinput="onInputFarmName"></input>
+  </view>
+  <view class="val-input">
+    <view class="meta">农场简介</view>
+    <textarea bindinput="onInputFarmDesc" rows="3">{{farm.farmDesc}}</textarea>
+  </view>
+  <view class="btns">
+    <van-button icon="passed" color="#41A8A8" bindtap="submitForm">激活</van-button>
+  </view>
+</view>
+<view class="container" wx:if="{{userInfo.role==2&&inputForm}}">
+  <view class="reg-title">
+    补充采购商信息
+  </view>
+  <view class="val-input">
+    <view class="meta">姓名/昵称</view>
+    <input type="text" value="{{userInfo.nickName}}" bindinput="onInputNickName"></input>
+  </view>
+  <view class="val-input">
+    <view class="meta">企业名称</view>
+    <input type="text" value="{{userInfo.farmName}}" bindinput="onInputFarmName"></input>
+  </view>
+  <view class="val-input">
+    <view class="meta">联系电话</view>
+    <input type="text" value="{{userInfo.mobile}}" bindinput="onInputMobile"></input>
+  </view>
+  <view class="btns">
+    <van-button icon="passed" color="#41A8A8" bindtap="submitForm">激活</van-button>
+  </view>
+</view>

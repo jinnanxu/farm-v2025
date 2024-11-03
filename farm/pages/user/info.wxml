@@ -1,0 +1,33 @@
+<!--pages/user/profile.wxml-->
+<view class="content">
+  <scroll-view scroll-y="true" show-scrollbar="true" enhanced="true" class="input-dialog">
+    <view class="val-input">
+      <view class="meta">手机号</view>
+      <input bindinput="bindMobileChange" type="number" value="{{userInfo.mobile}}"></input>
+    </view>
+    <view class="val-input">
+      <view class="meta">姓名</view>
+      <input bindinput="bindNickNameChange" type="text" value="{{userInfo.nickName}}"></input>
+    </view>
+    <block wx:if="{{urserInfo.role==1}}">
+      <view class="val-input">
+        <view class="meta">农场名称</view>
+        <input type="text" value="{{farm.farmName}}" bindinput="onInputFarmName"></input>
+      </view>
+      <view class="val-input">
+        <view class="meta">农场简介</view>
+        <textarea bindinput="onInputFarmDesc" rows="3">{{farm.farmDesc}}</textarea>
+      </view>
+    </block>
+    <view class="val-input">
+      <view class="meta">头像</view>
+      <image class="new-img" src="{{profileImg}}" wx:if="{{profileImg!=null && profileImg!=''}}"></image>
+      <image class="new-img" src="{{userInfo.pic==null?'http://129.211.222.131:18080/images/20230309132054typ1q.jpg':userInfo.pic}}" wx:else></image>
+      <van-button color="#d77f57" icon="photo" bindtap="chooseImg" size="small">选择图片</van-button>
+    </view>
+    <view class="btns">
+      <van-button color="#41a8a8" icon="share" bindtap="publishUpdate">更新信息</van-button>
+    </view>
+  </scroll-view>
+  <van-dialog id="van-dialog" />
+</view>

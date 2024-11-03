@@ -1,0 +1,15 @@
+<!--裁剪控件-->
+<image-cropper id="image-cropper" bindload="cropperload" bindimageload="loadimage" bindtapcut="clickcut" limit_move="{{limit_move}}" disable_rotate="{{disable_rotate}}" width="{{width}}" height="{{height}}" imgSrc="{{src}}" angle="{{angle}}" disable_width="{{disable_width}}" max_width="{{max_width}}" max_height="{{max_height}}" disable_height="{{disable_height}}" disable_ratio="{{disable_ratio}}">
+</image-cropper>
+<view class='bottom'>
+  <text class="btnBox" catchtap='cancel'>取消</text>
+  <view class="btnBox imageBox" catchtap='reset'>
+      <image src="/images/reset.png"></image>
+  </view>
+  <view class="btnBox imageBox"   catchtouchstart='rotate' catchtouchend='end'>
+      <image src="/images/roat.png"></image>
+  </view>
+  <!-- <button class="btnBox"  catchtouchstart='rotate' catchtouchend='end' data-type="rotate">旋转</button> -->
+  <!-- <button class="btnBox"  catchtap='reset'>重置</button> -->
+  <button class="btnBox btnColor"  bindtap='submit'>确定</button>
+</view>

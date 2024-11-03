@@ -1,0 +1,102 @@
+/* pages/schedule/sch-list.wxss */
+.sch-list{
+  width: 100%;
+  padding: 10px 2%;
+  box-sizing: border-box;
+  margin-top: 30px;
+}
+.filter{
+  padding: 10px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #fff;
+  z-index: 999;
+}
+.ftag{
+  background-color: #999;
+  color: #fff;
+  display: inline-block;
+  padding: 6px 10px;
+  border-radius: 4px;
+  margin-right: 15px;
+  text-align: center;
+  font-size: 14px;
+}
+.sch-list .item{
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 10px;
+  margin-top: 10px;
+  position: relative;
+  line-height: 28px;
+}
+.sch-list .sch-time{
+  font-size: 18px;
+  font-weight: bold;
+  color: #fd9845;
+}
+.sch-list .sch-time{
+  font-size: 18px;
+  font-weight: bold;
+  color: #fd9845;
+}
+.sch-list .sch-time-success{
+  color: #0ca294;
+  font-size: 16px;
+}
+.sch-content{
+  color: #555;
+  font-size: 14px;
+}
+.inline-item{
+  display: inline-block;
+}
+.ml10{
+  margin-left: 10px;
+}
+.sch-content .meta{
+  color: #999;
+  font-size: 14px;
+}
+.tag-item{
+  display: inline-block;
+  height: 20px;
+  line-height: 20px;
+  border-radius: 15px;
+  color: #fff;
+  background-color: #999;
+  padding: 4px 10px;
+  font-size: 14px;
+}
+.item .tags{
+  position: absolute;
+  top: 35%;
+  right: 4%;
+}
+.primary{
+  background-color: #5a98de;
+}
+.green{
+  background-color: #5cb85c;
+}
+.orange{
+  background-color: #fd9845;
+}
+.purple{
+  background-color: #d674ff;
+}
+.status{
+  display: inline-block;
+  height: 20px;
+  line-height: 20px;
+  color: #fff;
+  padding: 0 4px;
+  font-size: small;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.no-data{
+  text-align: center;
+  padding-top: 40px;
+  color: #999;
+}

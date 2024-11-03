@@ -1,0 +1,104 @@
+/* pages/pet/list.wxss */
+.index-head{
+  height: 58px;
+  background-color: #eee;
+  box-shadow: 0px 1px 8px rgba(0,0,0,.2);
+  box-sizing: border-box;
+  padding: 8px 2%;
+  position: relative;
+}
+.note-list{
+  line-height: 28px;
+  padding: 0 3%;
+  color: #666;
+  box-sizing: border-box;
+  padding-bottom: 50px;
+}
+.img-box{
+  height: 150px;
+  box-sizing: border-box;
+  vertical-align: top;
+}
+.note-list .pet-img{
+  width: 100%;
+  height: 100%;
+}
+.note-list .pet-title{
+  font-size: 18px;
+  color: #555;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+.note-list .item{
+  border-bottom: 1px solid #e2e2e2;
+  padding: 10px 0;
+  position: relative;
+}
+.note-list .item .desc{
+  font-size: 16px;
+  color: #30b5a2;
+  line-height: 30px;
+}
+.desc .loc{
+  width: 25px;
+  height: 25px;
+  vertical-align: middle;
+}
+.note-list .item .remark{
+  font-size: 14px;
+  color: #666;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  max-height: 65px;
+  line-height: 22px;
+}
+.orange-txt{
+  color: rgb(255, 183, 74);
+}
+.ccc-txt{color:#ccc;}
+.note-list .tags{
+  display: inline-block;
+  margin-left: 10px;
+}
+.note-list .tag-item{
+  display: inline-block;
+  margin-right: 8px;
+  height: 20px;
+  line-height: 20px;
+  border-radius: 10px;
+  color: #fff;
+  background-color: #999;
+  padding: 0 8px;
+  font-size: 14px;
+  font-weight: normal;
+}
+.tags .file-cnt{
+  float: right;
+  font-size: 14px;
+}
+.note-list .tags .primary{
+  background-color: #5a98de;
+}
+.note-list .tags .green{
+  background-color: #5cb85c;
+}
+.note-list .tags .orange{
+  background-color: #d77f57;
+}
+.delete{
+  position: absolute;
+  right: 0;
+  top: 10px;
+  padding: 0 5px;
+}
+.delete image{
+  width: 22px;
+  height: 22px;
+}
+.no-data{
+  text-align: center;
+  padding-top: 100px;
+  color: #999;
+}

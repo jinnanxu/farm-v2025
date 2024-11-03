@@ -1,0 +1,104 @@
+.note-list{
+  line-height: 28px;
+  padding: 0 3%;
+  color: #666;
+  box-sizing: border-box;
+}
+.img-box{
+  height: 150px;
+  box-sizing: border-box;
+  vertical-align: top;
+}
+.note-list .pet-img{
+  width: 100%;
+  height: 100%;
+}
+.note-list .pet-title{
+  font-size: 18px;
+  color: #555;
+  margin-bottom: 5px;
+}
+.note-list .item{
+  border-bottom: 1px solid #e2e2e2;
+  padding: 10px 0;
+  position: relative;
+}
+.note-list .item .desc{
+  font-size: 16px;
+  color: #30b5a2;
+  line-height: 30px;
+  padding: 2px 0;
+}
+.desc .loc{
+  width: 25px;
+  height: 25px;
+  vertical-align: top;
+  margin-right: 5px;
+}
+.note-list .item .remark{
+  font-size: 14px;
+  color: #666;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  max-height: 65px;
+  line-height: 22px;
+}
+.orange-txt{
+  color: rgb(255, 183, 74);
+}
+.ccc-txt{color:#ccc;}
+.note-list .tags{
+  display: inline-block;
+  margin-left: 10px;
+}
+.note-list .tag-item{
+  display: inline-block;
+  margin-right: 8px;
+  height: 20px;
+  line-height: 20px;
+  border-radius: 10px;
+  color: #fff;
+  background-color: #999;
+  padding: 0 8px;
+  font-size: 14px;
+  font-weight: normal;
+}
+.tags .file-cnt{
+  float: right;
+  font-size: 14px;
+}
+.tags .area{
+  font-size: 14px;
+}
+.item van-icon{
+  font-size: 18px;
+  margin-right: 3px;
+}
+.note-list .tags .orange{
+  background-color: #d77f57;
+}
+.delete{
+  position: absolute;
+  right: 0;
+  top: 10px;
+  padding: 0 5px;
+}
+.delete image{
+  width: 25px;
+  height: 25px;
+}
+.no-data{
+  text-align: center;
+  padding-top: 100px;
+  color: #999;
+}
+.c-gray{
+  color: #666;
+  font-size: 14px;
+}
+.blank{
+  color: #d77f57;
+  font-size: 14px;
+}

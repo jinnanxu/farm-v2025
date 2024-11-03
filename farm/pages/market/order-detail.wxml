@@ -1,0 +1,127 @@
+<view  class="user-file">
+  <view class="val-input">
+    <view class="label">供需内容</view>
+    <input value="{{intentionOrder.marketInfo.title}}" disabled="disabled"></input>
+  </view>
+  <view class="val-input">
+    <view class="label">供需类别</view>
+    <van-tag round color="#D77F57" size="large" wx:if="{{intentionOrder.marketInfo.infoType==1}}">出售</van-tag>
+    <van-tag round color="#41A8A8" size="large" wx:if="{{intentionOrder.marketInfo.infoType==2}}">求购</van-tag>
+  </view>
+  <view class="val-input">
+    <view class="label">
+      <text wx:if="{{intentionOrder.marketInfo.infoType==1}}">卖家原期望价格</text>
+      <text wx:if="{{intentionOrder.marketInfo.infoType==2}}">买家原期望价格</text>
+    </view>
+    <input disabled="disabled" type="text" value="{{intentionOrder.marketInfo.price}}"></input>
+  </view>
+  <!-- <view class="val-input">
+    <view class="label">
+      <text wx:if="{{intentionOrder.marketInfo.infoType==1}}">卖家联系方式</text>
+      <text wx:if="{{intentionOrder.marketInfo.infoType==2}}">买家联系方式</text>
+    </view>
+    <input disabled="disabled" type="text" value="{{intentionOrder.marketInfo.mobile}}"></input>
+  </view> -->
+  <view class="val-input">
+    <view class="label">
+      <text wx:if="{{intentionOrder.marketInfo.infoType==1}}">购买数量</text>
+      <text wx:if="{{intentionOrder.marketInfo.infoType==2}}">出售数量</text>
+    </view>
+    <input disabled="disabled" type="text" value="{{intentionOrder.quantity}}"></input>
+  </view>
+  <view class="val-input">
+    <view class="label">期望交货时间</view>
+    <view class="datetime-txt">{{intentionOrder.expDate}}</view>
+  </view>
+  <block wx:if="{{intentionOrder.marketInfo.userId==userInfo.userId}}">
+    <!--这个市场供需是当前登录用户发布的-->
+    <block wx:if="{{intentionOrder.marketInfo.infoType==1}}">
+      <view class="val-input">
+        <!--发布的是出售类市场资讯，因此当前登录用户是卖家-->
+        <view class="label">对方报价</view>
+        <view class="datetime-txt">
+          <!--买家报价-->
+          <text wx:if="{{intentionOrder.buyerPrice!=''}}" class="price">{{intentionOrder.buyerPrice}}</text>
+          <text wx:else>待报价</text>
+        </view>
+      </view>
+      <view class="val-input">
+        <view class="label">我的报价</view>
+        <view class="datetime-txt">
+          <text wx:if="{{intentionOrder.sellerPrice!=''}}" class="price">{{intentionOrder.sellerPrice}}</text>
+          <text wx:else>待报价</text>
+        </view>
+      </view>
+    </block>
+    <block wx:if="{{intentionOrder.marketInfo.infoType==2}}">
+      <view class="val-input">
+        <!--发布的是求购类市场资讯，因此当前登录用户是买家-->
+        <view class="label">对方报价</view>
+        <view class="datetime-txt">
+          <!--卖家报价-->
+          <text wx:if="{{intentionOrder.sellerPrice!=''}}" class="price">{{intentionOrder.sellerPrice}}</text>
+          <text wx:else>待报价</text>
+        </view>
+      </view>
+      <view class="val-input">
+        <view class="label">我的报价</view>
+        <view class="datetime-txt">
+          <text wx:if="{{intentionOrder.buyerPrice!=''}}" class="price">{{intentionOrder.buyerPrice}}</text>
+          <text wx:else>待报价</text>
+        </view>
+      </view>
+    </block>
+  </block>
+  <block wx:else>
+    <!--这个市场供需不是当前登录用户发布的-->
+    <block wx:if="{{intentionOrder.marketInfo.infoType==1}}">
+      <view class="val-input">
+        <!--发布的是出售类市场资讯，因此当前登录用户是买家-->
+        <view class="label">对方报价</view>
+        <view class="datetime-txt">
+          <!--卖家报价-->
+          <text wx:if="{{intentionOrder.sellerPrice!=''}}" class="price">{{intentionOrder.sellerPrice}}</text>
+          <text wx:else>待报价</text>
+        </view>
+      </view>
+      <view class="val-input">
+        <view class="label">我的报价</view>
+        <view class="datetime-txt">
+          <text wx:if="{{intentionOrder.buyerPrice!=''}}" class="price">{{intentionOrder.buyerPrice}}</text>
+          <text wx:else>待报价</text>
+        </view>
+      </view>
+    </block>
+    <block wx:if="{{intentionOrder.marketInfo.infoType==2}}">
+      <view class="val-input">
+        <!--发布的是求购类市场资讯，因此当前登录用户是卖家-->
+        <view class="label">对方报价</view>
+        <view class="datetime-txt">
+          <!--买家报价-->
+          <text wx:if="{{intentionOrder.buyerPrice!=''}}" class="price">{{intentionOrder.buyerPrice}}</text>
+          <text wx:else>待报价</text>
+        </view>
+      </view>
+      <view class="val-input">
+        <view class="label">我的报价</view>
+        <view class="datetime-txt">
+          <text wx:if="{{intentionOrder.sellerPrice!=''}}" class="price">{{intentionOrder.sellerPrice}}</text>
+          <text wx:else>待报价</text>
+        </view>
+      </view>
+    </block>
+  </block>
+  <view class="val-input" wx:if="{{intentionOrder.status==1}}">
+    <view class="label">我的新报价</view>
+    <input type="text" class="input2" bindinput="bindPriceInput" placeholder="请输入您新的报价"></input>
+  </view>
+  <view class="val-input" wx:if="{{intentionOrder.status==1}}">
+    <view class="label tip">如果您接受对方出价，请点击“确认意向”按钮完成价格谈判，否则请输入您的新报价并点击“更新报价”按钮。</view>
+  </view>
+  <view class="bottom-btn" wx:if="{{intentionOrder.status==1}}">
+    <view class="fb-btn" bindtap="confirmOrder" style="margin:0;">确认意向</view>
+    <text style="padding: 0 6px;"></text>
+    <view class="orange-btn fb-btn" bindtap="publishLog" style="margin:0;">更新报价</view>
+  </view>
+  <view class="opt-btns" style="height:15px;"></view>
+</view>

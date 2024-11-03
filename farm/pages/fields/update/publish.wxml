@@ -1,0 +1,62 @@
+<view  class="user-file" wx:if="{{category=='field'}}">
+  <view class="h3 gray-txt txt-center">增加地块信息</view>
+  <view class="val-input">
+    <view class="label">地块名称</view>
+    <input bindinput="bindFieldNameInput" type="text" value="{{field.fieldName}}" placeholder="请输入名称"></input>
+  </view>
+  <!-- <view class="val-input">
+    <view class="label">种植作物</view>
+    <picker bindchange="bindGenderChange" range="{{category}}">
+      <view class="category-txt">{{category[field.category-1]}}</view>
+    </picker>
+  </view> -->
+  <view class="val-input">
+    <view class="label">地块位置</view>
+    <input bindinput="bindFieldLocationInput" type="text" value="{{field.location}}" placeholder="请输入地块所在位置"></input>
+  </view>
+  <view class="val-input">
+    <view class="label">地块面积<text class="input-desc">（请同时输入单位）</text></view>
+    <input bindinput="bindAreaInput" type="text" value="{{field.area}}" placeholder="请输入地块面积，如5亩"></input>
+  </view>
+  <view class="val-input">
+    <view class="label">备注信息</view>
+    <textarea bindinput="bindFieldRemarkInput" value="{{field.remark}}" placeholder="请输入备注信息"/>
+  </view>
+  <view class="bottom-btn">
+    <view class="orange-btn fb-btn" bindtap="publishField">提交</view>
+  </view>
+</view>
+
+<view  class="user-file" wx:if="{{category=='crop'}}">
+  <view class="h3 gray-txt txt-center">增加作物信息</view>
+  <view class="val-input">
+    <view class="label">作物名称</view>
+    <input bindinput="bindCropNameInput" type="text" value="{{note.title}}" placeholder="请输入名称"></input>
+  </view>
+  <!-- <view class="val-input">
+    <view class="label">种植作物</view>
+    <picker bindchange="bindGenderChange" range="{{category}}">
+      <view class="category-txt">{{category[note.category-1]}}</view>
+    </picker>
+  </view> -->
+  <view class="val-input">
+    <view class="label">作物类别</view>
+    <picker bindchange="bindCropCategoryChange" range="{{cropCategory}}">
+      <view class="category-txt">{{cropCategory[cropCategoryIndx]}}</view>
+    </picker>
+  </view>
+  <view class="val-input">
+    <view class="label">备注</view>
+    <textarea bindinput="bindCropRemarkInput" value="{{note.content}}" placeholder="请输入作物的生长习性、栽培注意事项等"/>
+  </view>
+  <!-- <view class="val-input">
+    <view class="label">附件</view>
+    <image wx:if="{{petImg.length!=0}}" mode="aspectFit" class="coach-img" src="{{item}}" wx:for="{{petImg}}" wx:key="id"></image>
+    <view class="bottom-btn">
+      <view class="green-btn mt0 fb-btn" bindtap="chooseImg">选择图片</view>
+    </view>
+  </view> -->
+  <view class="bottom-btn">
+    <view class="orange-btn fb-btn" bindtap="publishCrop">提交</view>
+  </view>
+</view>

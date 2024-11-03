@@ -1,0 +1,38 @@
+<wxs src="../../../utils/date.wxs" module="filter" />
+<view class="note-list">
+  <!-- <view class="h3 gray-txt txt-center">作物种植管理</view> -->
+  <view class="item" wx:for="{{fieldList.records}}" wx:key="noteId" bindtap="toFieldDetail" data-fid='{{item.fieldId}}'>
+    <view class="pet-title">
+      <text>{{item.fieldName}}</text>
+      <view class="tags">
+        <view class="area">{{item.area}}</view>
+        <view class="tag-item" wx:if="{{item.status==-1}}">已删除</view>
+      </view>
+    </view>
+    <view class="desc" wx:if="{{item.crop!=null&&item.crop!='-1'}}">
+      <!-- <image src="/images/miao.png" class="loc"></image> -->
+      <van-icon name="flower-o" />
+      <text class="c-gray">当前作物：</text><text>{{item.crop}}</text> 
+    </view>
+    <view class="desc" wx:if="{{item.crop!=null&&item.crop!='-1'}}">
+      <!-- <image src="/images/time.png" class="loc"></image> -->
+      <van-icon name="underway-o" />
+      <text class="c-gray">种植时间：{{filter.format(item.plantTime, 'YY-MM-DD')}}</text> 
+    </view>
+    <view class="desc" wx:if="{{item.crop==null||item.crop==''||item.crop=='-1'}}">
+      <text class="blank">该地块当前空闲，未种植作物</text> 
+    </view>
+    <view class="delete" bindtap="onClickField" data-fid='{{item.fieldId}}' wx:if="{{item.crop==null||item.crop==''||item.crop=='-1'}}">
+      <picker bindchange="bindCropChange" range="{{cropList}}" range-key="cropName">
+        <!-- <image src="/images/add.png"></image> -->
+        <van-icon name="add" color="#41a8a8"/>
+      </picker>
+    </view>
+    <view class="delete" bindtap="onClickField" data-fid='{{item.fieldId}}' wx:if="{{item.crop!=null&&item.crop!=''&&item.crop!='-1'}}">
+      <van-icon name="delete" bindtap="deletePlant" data-fid='{{item.fieldId}}'/>
+      <picker bindchange="bindCropChange" range="{{cropList}}" range-key="cropName">
+        <van-icon name="exchange" color="#41a8a8" style="margin-top: 10px;"/>
+      </picker>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,73 @@
+<!--miniprogram/pages/select_role/role.wxml-->
+<view  class="user-file">
+  <!-- <view class="val-input">
+    <view class="label">日志标题</view>
+    <input bindinput="bindTitleInput" type="text" value="{{note.title}}" placeholder="请输入标题"></input>
+  </view> -->
+  <view class="val-input">
+    <view class="label">作业地块</view>
+    <picker bindchange="bindFieldChange" range="{{fieldList}}" range-key="fieldName">
+      <view class="category-txt" wx:if="{{currField!=null}}">{{currField.fieldName}}</view>
+      <view class="category-txt" wx:if="{{currField==null}}" style="color:#999;">-请选择地块-</view>
+    </picker>
+  </view>
+  <view class="val-input">
+    <view class="label">作物</view>
+    <view class="category-txt" wx:if="{{currField!=null}}">{{currField.crop}}</view>
+    <view class="category-txt" wx:if="{{currField==null}}" style="color:#999;">--</view>
+  </view>
+  <view class="val-input">
+    <view class="label">物候期</view>
+    <picker bindchange="bindPeriodChange" range="{{periodList}}">
+      <view class="category-txt">{{periodList[selectedPeriodIndex]}}</view>
+    </picker>
+  </view>
+  <view class="val-input">
+    <view class="label">天气</view>
+    <!-- <picker bindchange="bindWeatherChange" range="{{weatherList}}" wx:if="{{logWeather}}" class="weather-picker">
+      <view class="category-txt">{{weatherList[selectedWeacherIndex]}}</view>
+    </picker> -->
+    <view>
+      <text class="category-txt">{{weather.weather}} </text>
+      <text class="category-txt"> {{weather.temp}}</text>°C
+    </view>
+  </view>
+  <view class="val-input">
+    <view class="label">农事操作</view>
+    <picker bindchange="bindOperaterChange" range="{{operaterList}}">
+      <view class="category-txt">{{operaterList[selectedOperatIndex]}}</view>
+    </picker>
+  </view>
+  <!-- <view class="val-input">
+    <view class="label">开始时间</view>
+    <picker bindchange="bindStartTimeChange" mode="time" value="08:00">
+      <view class="category-txt">{{task.startTime}}</view>
+    </picker>
+  </view>
+  <view class="val-input">
+    <view class="label">结束时间</view>
+    <picker bindchange="bindEndTimeChange" mode="time" value="08:00">
+      <view class="category-txt">{{task.endTime}}</view>
+    </picker>
+  </view> -->
+  <view class="val-input">
+    <view class="label">操作详情</view>
+    <textarea bindinput="bindFieldRemarkInput" placeholder="请输入操作详情内容"/>
+  </view>
+  <view class="">
+    <view class="label">农事作业图片</view>
+    <view class="img-list">
+      <view wx:if="{{petImg.length!=0}}" class="upload-img" wx:for="{{uploadImgs}}" wx:key="id">
+        <image mode="aspectFit" class="pic" src="{{item}}"></image>
+        <image class="del-btn" src="/images/delete.png" data-idx="{{index}}" bindtap="deletePic"></image>
+      </view>
+      <view class="upload-img" bindtap="chooseImg" wx:if="{{uploadImgs.length<9}}">
+        <image src="/images/camera.png" mode="aspectFit" class="camera-icon"></image>
+      </view>
+    </view>
+  </view>
+  <view class="bottom-btn">
+    <view class="orange-btn fb-btn" bindtap="publishLog" style="margin:0;">提交</view>
+  </view>
+  <view class="opt-btns" style="height:15px;"></view>
+</view>

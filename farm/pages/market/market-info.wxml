@@ -1,0 +1,46 @@
+<wxs src="../../utils/date.wxs" module="filter" />
+<view class="note-list">
+  <view class="item" wx:for="{{marketList.records}}" wx:key="taskId" bindtap="toDetailPage" data-mid='{{item.marketInfoId}}'>
+    <view class="pet-title">
+      <van-tag round color="#D77F57" size="medium" wx:if="{{item.infoType==1}}">出售</van-tag>
+      <van-tag round color="#41A8A8" size="medium" wx:if="{{item.infoType==2}}">求购</van-tag>
+      <text>{{item.title}}</text>
+    </view>
+    <view class="auth-view">
+      <view class="profile">
+        <image src="{{item.userInfo.pic==null?'http://129.211.222.131:18080/images/20230309132054typ1q.jpg':item.userInfo.pic}}"></image>
+      </view>
+      <view class="right">
+        <view class="nickname">{{item.userInfo.nickName}} <text class="ptime">{{filter.format(item.publishDate, 'YY-MM-DD')}}</text> </view>
+        <view class="location"><text class="gray-txt">电话：</text><text class="mobile">{{item.mobile}}</text></view>
+      </view>
+      <view class="contact" catchtap="onCall" data-mobile="{{item.mobile}}">
+        <view class="tel-icon">
+          <van-icon name="phone-circle" />
+        </view>
+        <view class="cnow">立即联系</view>
+      </view>
+    </view>
+    <view class="auth-view market-p">
+      <van-icon name="gold-coin" class="vicon" color="#d77f57"/>
+      <text>价格：</text><text class="price">{{item.price}}</text>
+    </view>
+    <view class="auth-view market-p" wx:if="{{item.infoType==1}}">
+      <van-icon name="location" class="vicon" color="#d77f57"/>
+      <text>地址：</text><text class="price">{{item.address}}</text>
+    </view>
+    <view class="remark">{{item.detail}}</view>
+    <view class="img-box">
+      <view class="box" wx:for="{{item.picList}}" wx:for-item="imgItem" wx:for-index="imgIdx" wx:key="imgIdx">
+        <image class="pet-img" mode="aspectFill" src="{{imgItem}}"></image>
+      </view>
+    </view>
+  </view>
+  <view class="no-more" wx:if="{{noMore}}">——已全部加载——</view>
+</view>
+<view class="add-button" bindtap="toAddPage" data-category="field">
+  <view>
+    <image src="/images/edit.png"></image>
+  </view>
+  <view>发布</view>
+</view> 
