@@ -1,0 +1,29 @@
+# Windows
+[Dd]esktop.ini
+Thumbs.db
+$RECYCLE.BIN/
+
+# macOS
+.DS_Store
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+
+# Node.js
+node_modules/
+miniprogram_npm
+
+# ignore these folders
+target/
+.idea/
+.settings/
+.vscode/
+bin/
+out/
+ 
+# ignore these files
+.classpath
+.project
+.settings
+.idea
