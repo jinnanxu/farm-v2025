@@ -22,12 +22,12 @@
 ## 若需要后端接口工程，请联系157086662@qq.com
 
 ### 演示图 
-![输入图片说明](pic/farm2025-1.jpg) 
-![输入图片说明](pic/farm2025-2.jpg) 
-![输入图片说明](pic/farm2025-3.jpg) 
-![输入图片说明](pic/farm2025-4.jpg) 
-![输入图片说明](pic/farm2025-5.jpg) 
-![输入图片说明](pic/farm2025-6.png) 
+![输入图片说明](http://129.211.222.131:18080/images/github/farm2025-1.jpg) 
+![输入图片说明](http://129.211.222.131:18080/images/github/farm2025-2.jpg) 
+![输入图片说明](http://129.211.222.131:18080/images/github/farm2025-3.jpg) 
+![输入图片说明](http://129.211.222.131:18080/images/github/farm2025-4.jpg) 
+![输入图片说明](http://129.211.222.131:18080/images/github/farm2025-5.jpg) 
+![输入图片说明](http://129.211.222.131:18080/images/github/farm2025-6.png) 
 
 #### 参与贡献
 
